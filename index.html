@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Anish!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .cringe-message {
+            font-size: 50px;
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            animation: cringeAnimation 3s infinite;
+        }
+        @keyframes cringeAnimation {
+            0% { transform: scale(1) rotate(0deg); color: #ff00ff; }
+            25% { transform: scale(1.2) rotate(5deg); color: #00ffff; }
+            50% { transform: scale(1.5) rotate(-5deg); color: #ff0000; }
+            75% { transform: scale(1.2) rotate(10deg); color: #00ff00; }
+            100% { transform: scale(1) rotate(0deg); color: #ff00ff; }
+        }
+        .sparkles {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            animation: sparkleAnimation 1.5s infinite;
+        }
+        @keyframes sparkleAnimation {
+            0%, 100% { background-color: rgba(255, 255, 255, 0.1); }
+            50% { background-color: rgba(255, 255, 255, 0.3); }
+        }
+    </style>
+</head>
+<body>
+    <div class="cringe-message">Happy Birthday Anish!</div>
+    <div class="sparkles"></div>
+    <script>
+        const sparklesContainer = document.querySelector('.sparkles');
+
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'absolute';
+            sparkle.style.width = '10px';
+            sparkle.style.height = '10px';
+            sparkle.style.backgroundColor = 'white';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.boxShadow = '0 0 5px white, 0 0 10px white';
+            sparkle.style.left = `${Math.random() * 100}vw`;
+            sparkle.style.top = `${Math.random() * 100}vh`;
+            sparkle.style.opacity = Math.random();
+
+            sparklesContainer.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1500);
+        }
+
+        setInterval(createSparkle, 100);
+    </script>
+</body>
+</html>
