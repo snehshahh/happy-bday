@@ -15,12 +15,14 @@
             height: 100vh;
             overflow: hidden;
             font-family: 'Comic Sans MS', cursive, sans-serif;
+            position: relative;
         }
         .cringe-message {
             font-size: 50px;
             color: #ff00ff;
             text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
             animation: cringeAnimation 3s infinite;
+            position: absolute;
         }
         @keyframes cringeAnimation {
             0% { transform: scale(1) rotate(0deg); color: #ff00ff; }
@@ -40,10 +42,20 @@
             0%, 100% { background-color: rgba(255, 255, 255, 0.1); }
             50% { background-color: rgba(255, 255, 255, 0.3); }
         }
+        .rotating-img {
+            position: absolute;
+            width: 150px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            animation: rotateAnimation 5s infinite linear;
+        }
+        @keyframes rotateAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
-<img src="image_41.png" alt="30 Min" />
+    <img src="image_41.png" alt="30 Min" class="rotating-img" />
     <div class="cringe-message">30 Min?</div>
     <div class="sparkles"></div>
     <script>
