@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Anish!</title>
+    <title>Deep Portfolio!</title>
     <style>
         body {
             margin: 0;
@@ -17,7 +17,8 @@
             font-family: 'Comic Sans MS', cursive, sans-serif;
             position: relative;
         }
-        .cringe-message {
+        .cringe-message,
+        .rotating-img {
             font-size: 50px;
             color: #ff00ff;
             text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
@@ -43,14 +44,9 @@
             50% { background-color: rgba(255, 255, 255, 0.3); }
         }
         .rotating-img {
-            position: absolute;
             width: 150px; /* Adjust the width as needed */
             height: auto; /* Maintain aspect ratio */
-            animation: rotateAnimation 5s infinite linear;
-        }
-        @keyframes rotateAnimation {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            animation: cringeAnimation 3s infinite;
         }
     </style>
 </head>
